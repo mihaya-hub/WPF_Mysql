@@ -1,0 +1,19 @@
+﻿<Window x:Class="WPF_Mysql.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Mysql"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="360" Width="620">
+    <Window.Resources>
+        <local:studentDataSet x:Key="student"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource student}">
+        <Button x:Name="Read" Content="Read" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="520,50,0,0" Click="Read_Click"/>
+        <Button x:Name="Create" Content="Create" HorizontalAlignment="Left" Margin="520,120,0,0" VerticalAlignment="Top" Width="75" Click="Create_Click"/>
+        <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="520,190,0,0" VerticalAlignment="Top" Width="75" Click="Update_Click"/>
+        <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="520,260,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="309" Margin="10,10,0,0" VerticalAlignment="Top" Width="494" ItemsSource="{Binding student}"/>
+    </Grid>
+</Window>
